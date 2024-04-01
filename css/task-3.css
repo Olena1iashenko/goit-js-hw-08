@@ -1,0 +1,10 @@
+/* task 3 */
+input#name-input {
+  width: 360px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 24px;
+}

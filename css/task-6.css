@@ -1,0 +1,51 @@
+/* task 6 */
+#controls,
+#boxes {
+  background: #f6f6fe;
+  border-radius: 8px;
+  padding: 32px;
+  width: 486px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+#boxes {
+  width: 100%;
+}
+
+input {
+  border: 1px solid #808080;
+  border-radius: 8px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+button.create {
+  background: #4e75ff;
+}
+
+button.destroy {
+  background: #ff4e4e;
+}

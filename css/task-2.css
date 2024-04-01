@@ -1,0 +1,16 @@
+/* task 2 */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+  margin: 100px 56px;
+}
+
+.list-item {
+  width: calc((100% - 24px * 2) / 3);
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+}

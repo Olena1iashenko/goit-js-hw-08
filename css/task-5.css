@@ -1,0 +1,20 @@
+/* task 5 */
+.widget {
+  text-align: center;
+  margin: 100px auto;
+}
+
+button {
+  margin-top: 16px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 148px;
+  height: 40px;
+  border: none;
+  background: #4e75ff;
+
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
