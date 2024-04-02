@@ -64,3 +64,42 @@ const images = [
   },
 ];
 
+const gallery = document.querySelector('.gallery');
+let itemsHTML = ''; 
+for (const image of images) {
+  itemsHTML += `
+    <li class="gallery-item">
+      <a class="gallery-link" href="${image.original}">
+        <img
+          class="gallery-image"
+          src="${image.preview}"
+          data-source="${image.original}"
+          alt="${image.description}"
+        />
+      </a>
+    </li>
+  `;
+}
+gallery.insertAdjacentHTML('beforeend', itemsHTML);
+
+gallery.addEventListener("click", onModalBtnClick);
+
+gallery.addEventListener("blur", closeModalClick);
+
+let modal = null;
+
+    function onModalBtnClick(event) { 
+        event.preventDefault();
+        const targetHref = event.target.dataset.source;
+        if (event.target.nodeName !== "IMG") return;
+        // event.target.classList.add("active");
+        modal = basicLightbox.create(`<img src="${targetHref}" width="1112" height="640">`);
+        modal.show();
+    }
+    
+    function closeModalClick(event) {
+        modal.close()
+        gallery.removeEventListener("click", onModalBtnClick);
+}
+
+
