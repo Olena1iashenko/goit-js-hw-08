@@ -65,26 +65,26 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-let itemsHTML = ''; 
-for (const image of images) {
-  itemsHTML += `
+
+function createMarkup (array) {
+  return array.map(({preview, original, description}) => `
     <li class="gallery-item">
-      <a class="gallery-link" href="${image.original}">
+      <a class="gallery-link" href="${original}">
         <img
           class="gallery-image"
-          src="${image.preview}"
-          data-source="${image.original}"
-          alt="${image.description}"
+          src="${preview}"
+          data-source="${original}"
+          alt="${description}"
         />
       </a>
     </li>
-  `;
+  `).join("");
 }
-gallery.insertAdjacentHTML('beforeend', itemsHTML);
+gallery.insertAdjacentHTML('beforeend', createMarkup(images));
 
 gallery.addEventListener("click", onModalBtnClick);
 
-gallery.addEventListener("click", closeModalClick);
+// gallery.addEventListener("click", closeModalClick);
 
 let modal = null;
 
@@ -92,7 +92,7 @@ let modal = null;
         event.preventDefault();
         const targetHref = event.target.dataset.source;
         if (event.target.nodeName !== "IMG") return;
-        modal = basicLightbox.create(`<img src="${targetHref}" width="1112" height="640">`);
+        modal = basicLightbox.create(`<img src="${targetHref}" alt="${event.target.alt}" width="1112" height="640">`);
         modal.show();
     }
     
