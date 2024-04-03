@@ -84,7 +84,7 @@ gallery.insertAdjacentHTML('beforeend', itemsHTML);
 
 gallery.addEventListener("click", onModalBtnClick);
 
-gallery.addEventListener("blur", closeModalClick);
+gallery.addEventListener("click", closeModalClick);
 
 let modal = null;
 
@@ -92,14 +92,12 @@ let modal = null;
         event.preventDefault();
         const targetHref = event.target.dataset.source;
         if (event.target.nodeName !== "IMG") return;
-        // event.target.classList.add("active");
         modal = basicLightbox.create(`<img src="${targetHref}" width="1112" height="640">`);
         modal.show();
     }
     
     function closeModalClick(event) {
-        modal.close()
-        gallery.removeEventListener("click", onModalBtnClick);
+      modal.close()
 }
 
 
